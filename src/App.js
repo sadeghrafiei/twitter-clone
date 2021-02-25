@@ -8,11 +8,7 @@ function App() {
     <div className="app">
     {/* Sidebar */}
     <Sidebar />
-
-    {/* Feed */}
     <Feed />
-
-    {/* widgets */}
     <Widgets />
     </div>
   );
