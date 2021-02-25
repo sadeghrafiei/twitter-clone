@@ -1,8 +1,7 @@
 import { Avatar } from "@material-ui/core";
-import React from "react";
+import React , {forwardRef} from "react";
 import "./Post.css";
 import VerifiedUserIcon from "@material-ui/icons/VerifiedUser";
-import Gif from "../../../assets/gif/CV.gif";
 import {
   ChatBubbleOutline,
   FavoriteBorder,
@@ -10,9 +9,9 @@ import {
   Repeat,
 } from "@material-ui/icons";
 
-function Post({ displayName, username, verified, text, image, avatar }) {
+const Post = forwardRef(({ displayName, username, verified, text, image, avatar } ,ref) =>  {
   return (
-    <div className="post">
+    <div className="post" ref={ref}>
       <div className="post__avatar">
         <Avatar src={avatar} />
       </div>
@@ -30,7 +29,7 @@ function Post({ displayName, username, verified, text, image, avatar }) {
               <p>{text}</p>
             </div>
           </div>
-          <img src={image} alt="post" />
+          <img src={image} alt="" />
           <div className="post__footer">
             <ChatBubbleOutline fontSize="small" />
             <Repeat fontSize="small" />
@@ -41,6 +40,6 @@ function Post({ displayName, username, verified, text, image, avatar }) {
       </div>
     </div>
   );
-}
+})
 
 export default Post;
